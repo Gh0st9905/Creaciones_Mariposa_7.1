@@ -1,0 +1,522 @@
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+strong, b {
+  font-weight: bold;
+}
+em, i {
+  font-style: italic;
+}
+a img {
+  border: none;
+}
+/* END RESET */
+
+:root {
+  --white: #FFFFFF;
+  --green: #00FF00;
+  --black: #000000;
+
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --success: #16a34a;
+  --error: #dc2626;
+  --background: #f8fafc;
+  --card-bg: darkgray;
+  --text: green;
+  --text-light: #64748b;
+}
+
+
+body {
+  background: var(--bg);
+  color: var(--fontColor);
+  font-family: cursive;
+}
+
+.seccion {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contenedor {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+
+
+h1, h2, h3, h4 {
+  text-align: center;
+}
+
+.p {
+  font-size: 0.8em;
+  font-style: italic;
+  margin: 1em auto 0;
+  max-width: 70%;
+  text-align: center;
+  line-height: 1.5;
+}
+
+a:hover {color: #00FF00;}
+
+.center {text-align: center;}
+
+
+
+/* HEADER STYLES */
+.header {
+  background: var(--bg);
+  
+  position: fixed; /* Mantiene el encabezado fijo y sigue al usuario al bajar la pantalla */
+  width: 100%;
+}
+.header-nav {
+  text-align: center;
+  z-index: 50;
+} 
+.header-nav > li {
+  display: inline-block;
+  margin-top: 1rem;
+  margin-left: 1em;
+}
+
+.header-nav > li ~ li { /* Añade un borde azul */
+  border-left: 1px solid blue;
+  padding-left: 1em;
+}
+
+.header-nav a {
+  color: var(--fontColor);
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/*Diseño Responsivo*/
+.header-nav a:hover,
+.header-nav a:active { /*Cuando se coloca el ratón encima los otros enlaces de navegación, cambia de color*/
+  color: green;
+}
+.header-logo:hover,
+.header-logo:active {
+  opacity: 0.5;
+}
+
+.header-nav > li:first-child a { /*El enlace de HOME aparece de forma perpetua con el color anaranjado*/
+  color: #ed6e2f;
+}
+.header-nav > li:first-child a:hover { /*El enlace de HOME cambia a color verde cuando se coloca encima el ratón*/
+  color: #00FF00;
+}
+/* END HEADER STYLES */
+
+
+/*Diseño Responsivo*/
+/* Light and Dark themes*/
+.light-theme {
+  --bg: var(--white);
+  --fontColor: var(--black);
+  --btnBg: var(--black);
+  --btnFontColor: var(--green);
+}
+
+.dark-theme {
+  --bg: var(--black);
+  --fontColor: var(--white);
+  --btnBg: var(--green);
+  --btnFontColor: var(--black);
+}
+
+.btn2 {
+  color: var(--btnFontColor);
+  background-color: var(--btnBg);
+}
+
+.btn2 {
+  position: fixed;
+  top: 6px;
+  left: 10px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: none;
+  color: var(--btnFontColor);
+  background-color: var(--btnBg);
+  font-size: 12px;
+}
+/* END Light and Dark themes*/
+
+
+/* FOOTER STYLES */
+.pie {
+  font-size: small; 
+  text-align: center;
+  clear: both;
+  margin-top: 70px;
+  padding: 7vh 0;
+}
+/* END FOOTER STYLES */
+
+
+/* CARRUSEL *//*Diseño Responsivo*/
+
+/* Contenedor principal que oculta el desborde */
+.carousel-container {
+  position: relative;
+  max-width: 550px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Tira interna que contiene todas las imágenes alineadas */
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+/* Asegura que cada imagen ocupe exactamente el ancho del contenedor */
+.carousel-slide {
+  width: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+/* Botones de navegación con estilos genéricos */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn { left: 15px; }
+.next-btn { right: 15px; }
+/* END CARRUSEL */
+
+
+
+/* CARTAS DE INICIO DE PRODUCTOS */
+
+/*Diseño Responsivo*/
+.products-grid {
+  display: grid;
+  gap: 30px;
+  padding: 20px;
+  
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Estado base de la tarjeta */
+.product-card {
+  background: var(--card-bg);
+  border: 3px solid green;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- EFECTO RESALTADO (HOVER) --- */
+.product-card:hover {
+  transform: translateY(-5px); /* Eleva la tarjeta ligeramente */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Añade una sombra difuminada */
+  border-color: #007bff; /* Cambia el color del borde opcionalmente */
+}
+
+.product-image {
+  width: 100%;
+  
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 15px;
+}
+
+.product-info > h2 {
+  color: #000000;
+}
+
+/* --- DETALLES OCULTOS POR DEFECTO --- */
+.product-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, margin-top 0.3s ease;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Clase que añadirá JavaScript para mostrar los detalles */
+.product-card.active .product-details {
+  max-height: 200px; /* Un valor lo suficientemente alto para el texto */
+  margin-top: 15px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+
+/* END CARTAS DE PRODUCTOS */
+
+
+
+/* CARTAS DE CADA CATEGORIA */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header2 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+/* Vista de Catálogo */
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.product-card2 {
+  background: var(--card-bg);
+  border: 3px solid green;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card2:hover {
+  transform: translateY(-5px); /* Eleva la tarjeta ligeramente */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Añade una sombra difuminada */
+  border-color: #007bff; /* Cambia el color del borde opcionalmente */
+  
+}
+
+.product-image2 {
+  width: 100%;
+  height: 200px;
+  
+  background: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+}
+
+.product-info2 {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-info2 > h2 {
+  color: #000000;
+}
+
+.product-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.product-desc {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--text);
+}
+
+.btn3 {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn3:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Vista de Pago (Oculta por defecto) */
+.checkout-view {
+  display: none;
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border);
+}
+
+.checkout-header {
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.summary-box {
+  background-color: var(--background);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  border-left: 4px solid var(--primary);
+}
+
+.checkout-view > * {
+  color: #000000;
+}
+
+/* END CARTAS DE CADA CATEGORIA*/
+
+
+/* FORMULARIO DE PAGO */
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+/* Retroalimentación en tiempo real */
+.feedback {
+  font-size: 0.85rem;
+  margin-top: 4px;
+  min-height: 18px;
+  display: block;
+}
+
+.feedback.error {
+  color: var(--error);
+}
+
+.feedback.success {
+  color: var(--success);
+}
+
+input.invalid {
+  border-color: var(--error);
+  background-color: #fff1f2;
+}
+
+input.valid {
+  border-color: var(--success);
+  background-color: #f0fdf4;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+/* Pantalla de Éxito */
+.success-screen {
+  display: none;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.success-icon {
+  font-size: 64px;
+  color: var(--success);
+  margin-bottom: 20px;
+}
+/* END FORMULARIO DE PAGO */

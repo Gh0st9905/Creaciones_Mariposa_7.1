@@ -1,0 +1,76 @@
+/*Diseño Responsivo*/
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  
+
+  .seccion {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .contenedor {
+    width: 80%;
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+
+  .header-nav a {
+    font-size: 0.7rem;
+  }
+
+  
+
+  .btn {
+    text-align: center;
+    width: 100%;
+  }
+
+  .card {
+    margin-left: 2%;
+  }
+
+  .card-text {
+    font-size: small;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  
+
+  .seccion {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .contenedor {
+    width: 80%;
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .btn {
+    text-align: center;
+    width: 100%;
+  }
+
+  .card {
+    margin-left: 2%;
+  }
+
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  
+  .card {
+    margin-left: 19%;
+  }
+  
+}

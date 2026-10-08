@@ -1,0 +1,84 @@
+<!--Creado por Wilberto Joel Luna Alvarado/Gh0st9905-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Creaciones Mariposa</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/estilo.css"> <!--Separación del código CSS-->
+    <link rel="stylesheet" type="text/css" href="./css/screen.css"> <!--Separación del código CSS-->
+</head>
+
+<!-- Barra de Navegación -->
+<header class="header"> <!--HTML header Semántico-->
+    <nav> <!--HTML nav Semántico-->
+        <ul class="header-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="info.html">Due&ntilde;a</a></li>
+        </ul>
+        <button class="btn2">Dark</button> <!--botón para los temas claros y oscuros-->
+    </nav>
+</header>
+<body class="light-theme">
+    <main class="seccion contenedor"><br> <!--HTML main Semántico-->
+        <article class="container-fluid p-5">
+            <h1>Creaciones Mariposa</h1>
+            <p class="p">"Entrelazando hilos para lograr mi sue&ntilde;o"</p>
+        </article>
+        <br>
+        <article class="container mt-5"> <!--HTML article Semántico-->
+            
+            <h2>Productos</h2><br><br>
+
+            <section class="carousel-container"> <!--HTML section Semántico-->
+
+                <!--Carrusel en JavaScript-->
+                <div class="carousel-track">
+                    <img class="carousel-slide" src="images/IMG-20260314-WA0048.jpg" alt="Carteras1" width="250" height="350">
+                    <img class="carousel-slide" src="images/IMG-20260314-WA0017.jpg" alt="Wallets2" width="250" height="350">
+                    <img class="carousel-slide" src="images/IMG-20260731-WA0011.jpg" alt="Sombreros3" width="250" height="350">
+                    <img class="carousel-slide" src="images/IMG-20260731-WA0000.jpg" alt="Pantallas4" width="250" height="350">
+                    <img class="carousel-slide" src="images/IMG-20260419-WA0000.jpg" alt="Chancletas5" width="250" height="350">
+                    <img class="carousel-slide" src="images/20261004_085653.jpg" alt="Camisas6" width="250" height="350">
+                    <img class="carousel-slide" src="images/20260919_094940.jpg" alt="Collares7" width="250" height="350">
+                </div>
+
+                <!-- Botones de navegación -->
+                <button class="carousel-btn prev-btn">&#10094;</button>
+                <button class="carousel-btn next-btn">&#10095;</button>
+            <section>
+            <section class="row">
+                <div class="col">
+                    <p class="p">Vea nuestros <a href="productos.html">productos</a> m&aacute;s recientes.</p>
+                </div>
+            </section>
+        </article>
+
+        <br><br>
+
+        <aside> <!--HTML aside Semántico--> <!--Imagen de instagram con enlace anclado-->
+            <a href="https://www.instagram.com/crea.cionesmariposa/" target="_blank">
+                <img src="./images/instagram.png" width="80" height="80">
+            </a>
+        </aside>
+        
+        <footer class="p-3 pie"> <!--HTML footer Semántico-->
+            <hr>
+            <article class="container">
+                <section class="row">
+                    <div class="col">
+                        <p>© 2026 Creaciones Mariposa. Todos los derechos reservados.</p> <!--Trademark-->
+                    </div>
+                </section>
+            </article>
+        </footer>   
+    </main>
+    <script src="./js/light_dark.js"></script> <!--Separación del código JavaScript-->
+    <script src="./js/carrusel.js"></script> <!--Separación del código JavaScript-->
+    <noscript>You need to enable JavaScript to view the full site.</noscript>
+</body>
+</html>
